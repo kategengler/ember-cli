@@ -106,7 +106,10 @@ describe('blueprint - addon', function() {
     "ember-disable-prototype-extensions": "^1.1.0"\n\
   },\n\
   "ember-addon": {\n\
-    "configPath": "tests/dummy/config"\n\
+    "configPath": "tests/dummy/config",\n\
+    "versionCompatibility": {\n\
+      "ember": ">2.4.0"\n\
+    }\n\
   }\n\
 }\n');
       });

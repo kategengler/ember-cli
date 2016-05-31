@@ -50,19 +50,6 @@ describe('Acceptance: addon-smoke-test', function() {
     });
   });
 
-  it('generates package.json and bower.json with proper metadata', function() {
-    var packageContents = fs.readJsonSync('package.json');
-
-    expect(packageContents.name).to.equal(addonName);
-    expect(packageContents.private).to.be.an('undefined');
-    expect(packageContents.keywords).to.deep.equal([ 'ember-addon' ]);
-    expect(packageContents['ember-addon']).to.deep.equal({ 'configPath': 'tests/dummy/config' });
-
-    var bowerContents = fs.readJsonSync('bower.json');
-
-    expect(bowerContents.name).to.equal(addonName);
-  });
-
   it('ember addon foo, clean from scratch', function() {
     return ember(['test']);
   });

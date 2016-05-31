@@ -42,6 +42,9 @@ module.exports = {
 
     contents['ember-addon'] = contents['ember-addon'] || {};
     contents['ember-addon'].configPath = 'tests/dummy/config';
+    contents['ember-addon'].versionCompatibility = {
+      ember: '>2.4.0'
+    };
 
     this._writeContentsToFile(sortPackageJson(contents), 'package.json');
   },
