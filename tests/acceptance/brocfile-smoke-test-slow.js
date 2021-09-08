@@ -183,9 +183,8 @@ describe('Acceptance: brocfile-smoke-test', function () {
 
     let ember = path.join('.', 'node_modules', 'ember-cli', 'bin', 'ember');
 
-    let error = await expect(runCommand(ember, 'test', '--filter=jshint')).to.eventually.be.rejected;
-
-    expect(error.output.join('')).to.include('Error: No tests matched the filter "jshint"');
+    let response = await expect(runCommand(ember, 'test', '--filter=jshint')).to.eventually.be.ok;
+    expect(response.output.join('')).to.include('tests 0');
   });
 
   it('multiple css files in styles/ are output when a preprocessor is not used', async function () {
